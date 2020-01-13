@@ -1,0 +1,55 @@
+#main{
+    font-family: "MS Gothic",serif;
+    text-align: center;
+}
+#head{
+    height: 150px;
+    width: 97%;
+    border-style: solid;
+    border-color : aqua ;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+#head-link{
+    height: 25px;
+    width: 97%;
+    border-style: ridge;
+    border-color: deeppink;
+    margin: 5px 5px 10px 5px;
+    font-style: italic;
+}
+#left{
+    float: left;
+    height: 400px;
+    width: 10%;
+    border-style: groove;
+    border-color: chartreuse;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+
+#right{
+    float: right;
+    height: 400px;
+    width: 15%;
+    border-style: groove;
+    border-color: chartreuse;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+#content{
+    float: left;
+    height: 400px;
+    width: 72%;
+    border-style: groove;
+    border-color: chartreuse;
+}
+#foot{
+    clear:left;
+    height: 150px;
+    width: auto;
+    border-style: solid;
+    border-color : black ;
+    margin: 20px 5px 10px 5px;
+}
