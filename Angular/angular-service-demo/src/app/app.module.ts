@@ -7,6 +7,8 @@ import { SimpleDictionaryComponent } from './simple-dictionary/simple-dictionary
 import { TimelinesComponent } from './timelines/timelines.component';
 import { DictionaryPageComponent } from './dictionary-page/dictionary-page.component';
 import {AppRoutingModule} from './app-routing.module';
+import { YoutubePlaylistComponent } from './youtube-playlist/youtube-playlist.component';
+import { YoutubePlayerComponent } from './youtube-player/youtube-player.component';
 
 @NgModule({
     declarations: [
@@ -14,7 +16,9 @@ import {AppRoutingModule} from './app-routing.module';
         IpComponent,
         SimpleDictionaryComponent,
         TimelinesComponent,
-        DictionaryPageComponent
+        DictionaryPageComponent,
+        YoutubePlaylistComponent,
+        YoutubePlayerComponent
     ],
   imports: [
     BrowserModule,
