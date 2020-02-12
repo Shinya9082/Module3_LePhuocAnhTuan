@@ -51,6 +51,32 @@
       "email": "",
       "phoneNumber": "0899859055",
       "address": "Liên chiểu, Đà Nẵng"
+    },
+    {
+      "fullName": "Nguyễn Thị Bân",
+      "position": "Tiếp viên",
+      "academyLevel": "Đại Học",
+      "group": "Tiếp Thị",
+      "dateOfBirth": "1994-08-10",
+      "identityNumber": "201656333",
+      "salary": "9",
+      "email": "ban@gmail.com",
+      "phoneNumber": "0899851930",
+      "address": "Thanh Khê - Đà Nẵng",
+      "id": 5
+    },
+    {
+      "fullName": "Tuan",
+      "position": "",
+      "academyLevel": "",
+      "group": "",
+      "dateOfBirth": "",
+      "identityNumber": "",
+      "salary": "",
+      "email": "",
+      "phoneNumber": "",
+      "address": "",
+      "id": 6
     }
   ],
   "customers": [
