@@ -1,7 +1,8 @@
 <div class="row justify-content-between">
   <h2>Danh sách nhân viên</h2>
   <div class="d-flex">
-    <input class="form-control mr-3 " type="text" placeholder="Nhập tên cần tìm kiếm" style="width: 400px; height: 100%">
+    <input class="form-control mr-3 " type="text"  placeholder="Nhập tên cần tìm kiếm" style="width: 400px; height: 100%"
+      [(ngModel)]="term">
     <button class="btn btn-outline-primary" >Tìm kiếm</button>
   </div>
 </div>
@@ -25,18 +26,18 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>1</td>
-        <td>John Cena</td>
-        <td>Operator</td>
-        <td>First class</td>
-        <td>Logistic</td>
-        <td>1/1/1991</td>
-        <td>13132123</td>
-        <td>9 trieu</td>
-        <td>arknights@gmail.com</td>
-        <td>64654654</td>
-        <td>Rodhesh island</td>
+      <tr *ngFor="let employee of employees |filter:term">
+        <td>{{employee.id}}</td>
+        <td>{{employee.fullName}}</td>
+        <td>{{employee.position}}</td>
+        <td>{{employee.academyLevel}}</td>
+        <td>{{employee.group}}</td>
+        <td>{{employee.dateOfBirth}}</td>
+        <td>{{employee.identityNumber}}</td>
+        <td>{{employee.salary + ' triệu'}}</td>
+        <td>{{employee.email}}</td>
+        <td>{{employee.phoneNumber}}</td>
+        <td>{{employee.address}}</td>
         <td style="width: auto">
           <button class="btn btn-sm btn-warning mr-3">Sửa</button>
           <button class="btn btn-sm btn-danger">Xóa</button>
