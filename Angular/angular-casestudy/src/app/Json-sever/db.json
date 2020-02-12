@@ -1,0 +1,110 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "fullName": "Lê Phước Anh Tuấn",
+      "position": "Nhân viên",
+      "academyLevel": "Đại học",
+      "group": "Kinh doanh",
+      "dateOfBirth": "06/06/1993",
+      "identityNumber": "201656077",
+      "salary": "10",
+      "email": "abcabc@gmail.com",
+      "phoneNumber": "0899859135",
+      "address": "Sơn trà, Đà Nẵng"
+    },
+    {
+      "id": 2,
+      "fullName": "Lê Phước Anh Tuấn",
+      "position": "Nhân viên",
+      "academyLevel": "Đại học",
+      "group": "Kinh doanh",
+      "dateOfBirth": "06/06/1993",
+      "identityNumber": "201656077",
+      "salary": "10",
+      "email": "abcabc@gmail.com",
+      "phoneNumber": "0899859135",
+      "address": "Sơn trà, Đà Nẵng"
+    },
+    {
+      "id": 3,
+      "fullName": "Lê Phước Anh Tuấn",
+      "position": "Nhân viên",
+      "academyLevel": "Đại học",
+      "group": "Kinh doanh",
+      "dateOfBirth": "06/06/1993",
+      "identityNumber": "201656077",
+      "salary": "10",
+      "email": "abcabc@gmail.com",
+      "phoneNumber": "0899859135",
+      "address": "Sơn trà, Đà Nẵng"
+    },
+    {
+      "id": 4,
+      "fullName": "Lê Phước Anh Tuấn",
+      "position": "Nhân viên",
+      "academyLevel": "Đại học",
+      "group": "Kinh doanh",
+      "dateOfBirth": "06/06/1993",
+      "identityNumber": "201656077",
+      "salary": "10",
+      "email": "abcabc@gmail.com",
+      "phoneNumber": "0899859135",
+      "address": "Sơn trà, Đà Nẵng"
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "fullName": "Lê Phước Anh Tuấn",
+      "position": "Nhân viên",
+      "academyLevel": "Đại học",
+      "group": "Kinh doanh",
+      "dateOfBirth": "06/06/1993",
+      "identityNumber": "201656077",
+      "salary": "10",
+      "email": "abcabc@gmail.com",
+      "phoneNumber": "0899859135",
+      "address": "Sơn trà, Đà Nẵng"
+    },
+    {
+      "id": 2,
+      "fullName": "Lê Phước Anh Tuấn",
+      "position": "Nhân viên",
+      "academyLevel": "Đại học",
+      "group": "Kinh doanh",
+      "dateOfBirth": "06/06/1993",
+      "identityNumber": "201656077",
+      "salary": "10",
+      "email": "abcabc@gmail.com",
+      "phoneNumber": "0899859135",
+      "address": "Sơn trà, Đà Nẵng"
+    },
+    {
+      "id": 3,
+      "fullName": "Lê Phước Anh Tuấn",
+      "position": "Nhân viên",
+      "academyLevel": "Đại học",
+      "group": "Kinh doanh",
+      "dateOfBirth": "06/06/1993",
+      "identityNumber": "201656077",
+      "salary": "10",
+      "email": "abcabc@gmail.com",
+      "phoneNumber": "0899859135",
+      "address": "Sơn trà, Đà Nẵng"
+    },
+    {
+      "fullName": "Lê Phước ",
+      "position": "Nhân viên",
+      "academyLevel": "Đại học",
+      "group": "Kinh doanh",
+      "dateOfBirth": "06/06/1993",
+      "identityNumber": "201656077",
+      "salary": "25",
+      "email": "abcabc@gmail.com",
+      "phoneNumber": "0899859135",
+      "address": "Sơn trà, Đà Nẵng",
+      "id": 4
+    }
+  ]
+}
