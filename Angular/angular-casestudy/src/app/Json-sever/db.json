@@ -1,17 +1,17 @@
 {
   "employees": [
     {
-      "id": 1,
-      "fullName": "Lê Phước Anh Tuấn",
+      "fullName": "Lê Phước Anh Tuấn 1",
       "position": "Nhân viên",
       "academyLevel": "Đại học",
       "group": "Kinh doanh",
-      "dateOfBirth": "06/06/1993",
+      "dateOfBirth": "1993-09-05T17:00:00.000Z",
       "identityNumber": "201656077",
       "salary": "10",
       "email": "abcabc@gmail.com",
-      "phoneNumber": "0899859135",
-      "address": "Sơn trà, Đà Nẵng"
+      "phoneNumber": "0909859135",
+      "address": "Sơn trà, Đà Nẵng",
+      "id": 1
     },
     {
       "id": 2,

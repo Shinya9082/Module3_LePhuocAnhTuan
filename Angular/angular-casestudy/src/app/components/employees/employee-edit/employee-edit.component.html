@@ -1,1 +1,64 @@
-<p>employee-edit works!</p>
+<h3 class="text-center">Chỉnh sửa thông tin nhân viên</h3>
+<form class="w-75 mx-auto mt-3" [formGroup]="formEditNewEmployee">
+  <div class="form-group">
+    <p>Họ và Tên</p>
+    <input class="form-control" type="text" formControlName="fullName">
+    <p *ngIf="formEditNewEmployee.controls.fullName.errors?.required && formEditNewEmployee.controls.fullName.touched" class="text-danger">Vui lòng nhập vào</p>
+  </div>
+  <div class="form-group">
+    <p>Vị Trí</p>
+    <input class="form-control" type="text" formControlName="position">
+    <p *ngIf="formEditNewEmployee.controls.position.errors?.required && formEditNewEmployee.controls.position.touched" class="text-danger">Vui lòng nhập vào</p>
+  </div>
+  <div class="form-group">
+    <p>Trình Độ</p>
+    <input class="form-control" type="text" formControlName="academyLevel">
+    <p *ngIf="formEditNewEmployee.controls.academyLevel.errors?.required && formEditNewEmployee.controls.academyLevel.touched" class="text-danger">Vui lòng nhập vào</p>
+  </div>
+  <div class="form-group">
+    <p>Bộ Phận</p>
+    <input class="form-control" type="text" formControlName="group">
+    <p *ngIf="formEditNewEmployee.controls.group.errors?.required && formEditNewEmployee.controls.group.touched" class="text-danger">Vui lòng nhập vào</p>
+  </div>
+  <div class="form-group">
+    <p>Ngày Sinh</p>
+    <mat-form-field>
+      <input [max]="maxDate" [min]="minDate" matInput [matDatepicker]="myDatepicker" class="form-control" formControlName="dateOfBirth" placeholder="Chọn ngày sinh">
+      <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+      <mat-datepicker #myDatepicker></mat-datepicker>
+    </mat-form-field>
+    <p *ngIf="formEditNewEmployee.controls.dateOfBirth.errors?.required && formEditNewEmployee.controls.dateOfBirth.touched" class="text-danger">Vui lòng chọn một ngày</p>
+  </div>
+  <div class="form-group">
+    <p>CMND</p>
+    <input class="form-control" type="text" formControlName="identityNumber">
+    <p *ngIf="formEditNewEmployee.controls.identityNumber.errors?.required && formEditNewEmployee.controls.identityNumber.touched" class="text-danger">Vui lòng nhập vào</p>
+    <p *ngIf="formEditNewEmployee.controls.identityNumber.errors?.pattern && formEditNewEmployee.controls.identityNumber.touched" class="text-danger">Không đúng. Vd: 201201201</p>
+  </div>
+  <div class="form-group">
+    <p>Lương</p>
+    <input class="form-control" type="text" formControlName="salary">
+    <p *ngIf="formEditNewEmployee.controls.salary.errors?.required && formEditNewEmployee.controls.salary.touched" class="text-danger">Vui lòng nhập vào</p>
+    <p *ngIf="formEditNewEmployee.controls.salary.errors?.pattern && formEditNewEmployee.controls.salary.touched" class="text-danger">Vui lòng nhập phải là số nguyên dương</p>
+  </div>
+  <div class="form-group">
+    <p>Email</p>
+    <input class="form-control" type="email" formControlName="email">
+    <p *ngIf="formEditNewEmployee.controls.email.errors?.required && formEditNewEmployee.controls.email.touched" class="text-danger">Vui lòng nhập vào</p>
+    <p *ngIf="formEditNewEmployee.controls.email.errors?.email && formEditNewEmployee.controls.email.touched" class="text-danger">Nhập sai định dạng Vd:abcabc@gmail.com</p>
+  </div>
+  <div class="form-group">
+    <p>SĐT</p>
+    <input class="form-control" type="text" formControlName="phoneNumber">
+    <p *ngIf="formEditNewEmployee.controls.phoneNumber.errors?.required && formEditNewEmployee.controls.phoneNumber.touched" class="text-danger">Vui lòng nhập vào</p>
+    <p *ngIf="formEditNewEmployee.controls.phoneNumber.errors?.pattern && formEditNewEmployee.controls.phoneNumber.touched" class="text-danger">Số điện thoại không xác định</p>
+  </div>
+  <div class="form-group">
+    <p>Địa Chỉ</p>
+    <input class="form-control" type="text" formControlName="address">
+    <p *ngIf="formEditNewEmployee.controls.address.errors?.required && formEditNewEmployee.controls.address.touched" class="text-danger">Vui lòng nhập vào</p>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <button [disabled]="formEditNewEmployee.invalid" class="btn btn-success mt-4" (click)="editEmployee()">Chỉnh sữa</button>
+  </div>
+</form>

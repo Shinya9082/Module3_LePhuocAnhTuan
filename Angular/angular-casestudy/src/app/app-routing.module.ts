@@ -16,7 +16,7 @@ import { EmployeeEditComponent } from './components/employees/employee-edit/empl
 const routes: Routes = [
   { path: 'employee-list', component: EmployeeListComponent },
   {path: 'employee-add', component: EmployeeAddComponent},
-  {path: 'employee-edit/?id', component: EmployeeEditComponent},
+  {path: 'employee-edit/:id', component: EmployeeEditComponent},
   { path: '', component: HomeComponent },
   {path: '**', component: PageNotFoundComponent}
 ];
@@ -32,6 +32,12 @@ const routes: Routes = [
     MaterialModule
   ],
   exports: [RouterModule],
-  declarations: [HomeComponent, PageNotFoundComponent, EmployeeListComponent, EmployeeAddComponent, EmployeeDeleteComponent, EmployeeEditComponent]
+  declarations: [
+    HomeComponent,
+    PageNotFoundComponent,
+    EmployeeListComponent,
+    EmployeeAddComponent,
+    EmployeeDeleteComponent,
+    EmployeeEditComponent]
 })
 export class AppRoutingModule { }
