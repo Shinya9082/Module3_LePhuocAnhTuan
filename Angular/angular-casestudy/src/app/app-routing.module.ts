@@ -8,7 +8,6 @@ import {Ng2SearchPipeModule} from 'ng2-search-filter';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { EmployeeAddComponent } from './components/employees/employee-add/employee-add.component';
-import {MaterialModule} from './material.module';
 
 
 const routes: Routes = [
@@ -26,7 +25,6 @@ const routes: Routes = [
     FormsModule,
     NgxPaginationModule,
     ReactiveFormsModule,
-    MaterialModule
   ],
   exports: [RouterModule],
   declarations: [HomeComponent, PageNotFoundComponent, EmployeeListComponent, EmployeeAddComponent]
