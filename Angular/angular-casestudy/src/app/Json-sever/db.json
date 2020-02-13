@@ -77,6 +77,19 @@
       "phoneNumber": "",
       "address": "",
       "id": 6
+    },
+    {
+      "fullName": "Nguyễn Văn Ban",
+      "position": "Bán Hàng",
+      "academyLevel": "Trung Cấp",
+      "group": "Kinh Doanh",
+      "dateOfBirth": "1996-02-29",
+      "identityNumber": "201201009",
+      "salary": "7",
+      "email": "a@gmail.com",
+      "phoneNumber": "0912132132",
+      "address": "Ngũ Hành Sơn - Đà Nẵng",
+      "id": 7
     }
   ],
   "customers": [

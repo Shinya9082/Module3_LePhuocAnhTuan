@@ -1,0 +1,60 @@
+<h3 class="text-center">Thêm mới nhân viên</h3>
+<form class="w-75 mx-auto mt-3" [formGroup]="formAddNewEmployee">
+  <div class="form-group">
+    <p>Họ và Tên</p>
+    <input class="form-control" type="text" formControlName="fullName">
+    <p *ngIf="formAddNewEmployee.controls.fullName.errors?.required && formAddNewEmployee.controls.fullName.touched" class="text-danger">Vui lòng nhập vào</p>
+  </div>
+  <div class="form-group">
+    <p>Vị Trí</p>
+    <input class="form-control" type="text" formControlName="position">
+    <p *ngIf="formAddNewEmployee.controls.position.errors?.required && formAddNewEmployee.controls.position.touched" class="text-danger">Vui lòng nhập vào</p>
+  </div>
+  <div class="form-group">
+    <p>Trình Độ</p>
+    <input class="form-control" type="text" formControlName="academyLevel">
+    <p *ngIf="formAddNewEmployee.controls.academyLevel.errors?.required && formAddNewEmployee.controls.academyLevel.touched" class="text-danger">Vui lòng nhập vào</p>
+  </div>
+  <div class="form-group">
+    <p>Bộ Phận</p>
+    <input class="form-control" type="text" formControlName="group">
+    <p *ngIf="formAddNewEmployee.controls.group.errors?.required && formAddNewEmployee.controls.group.touched" class="text-danger">Vui lòng nhập vào</p>
+  </div>
+  <div class="form-group">
+    <p>Ngày Sinh</p>
+    <input class="form-control" type="date" formControlName="dateOfBirth">
+    <p *ngIf="formAddNewEmployee.controls.dateOfBirth.errors?.required && formAddNewEmployee.controls.dateOfBirth.touched" class="text-danger">Vui lòng nhập vào</p>
+  </div>
+  <div class="form-group">
+    <p>CMND</p>
+    <input class="form-control" type="text" formControlName="identityNumber">
+    <p *ngIf="formAddNewEmployee.controls.identityNumber.errors?.required && formAddNewEmployee.controls.identityNumber.touched" class="text-danger">Vui lòng nhập vào</p>
+    <p *ngIf="formAddNewEmployee.controls.identityNumber.errors?.pattern && formAddNewEmployee.controls.identityNumber.touched" class="text-danger">Không đúng. Vd: 201201201</p>
+  </div>
+  <div class="form-group">
+    <p>Lương</p>
+    <input class="form-control" type="text" formControlName="salary">
+    <p *ngIf="formAddNewEmployee.controls.salary.errors?.required && formAddNewEmployee.controls.salary.touched" class="text-danger">Vui lòng nhập vào</p>
+    <p *ngIf="formAddNewEmployee.controls.salary.errors?.pattern && formAddNewEmployee.controls.salary.touched" class="text-danger">Vui lòng nhập phải là số nguyên dương</p>
+  </div>
+  <div class="form-group">
+    <p>Email</p>
+    <input class="form-control" type="email" formControlName="email">
+    <p *ngIf="formAddNewEmployee.controls.email.errors?.required && formAddNewEmployee.controls.email.touched" class="text-danger">Vui lòng nhập vào</p>
+    <p *ngIf="formAddNewEmployee.controls.email.errors?.email && formAddNewEmployee.controls.email.touched" class="text-danger">Nhập sai định dạng Vd:abcabc@gmail.com</p>
+  </div>
+  <div class="form-group">
+    <p>SĐT</p>
+    <input class="form-control" type="text" formControlName="phoneNumber">
+    <p *ngIf="formAddNewEmployee.controls.phoneNumber.errors?.required && formAddNewEmployee.controls.phoneNumber.touched" class="text-danger">Vui lòng nhập vào</p>
+    <p *ngIf="formAddNewEmployee.controls.phoneNumber.errors?.pattern && formAddNewEmployee.controls.phoneNumber.touched" class="text-danger">Số điện thoại không xác định</p>
+  </div>
+  <div class="form-group">
+    <p>Địa Chỉ</p>
+    <input class="form-control" type="text" formControlName="address">
+    <p *ngIf="formAddNewEmployee.controls.address.errors?.required && formAddNewEmployee.controls.address.touched" class="text-danger">Vui lòng nhập vào</p>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <button [disabled]="formAddNewEmployee.invalid" class="btn btn-success mt-4" (click)="addEmployee()">Thêm mới</button>
+  </div>
+</form>
