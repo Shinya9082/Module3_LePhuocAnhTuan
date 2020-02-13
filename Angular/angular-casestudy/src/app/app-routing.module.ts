@@ -10,11 +10,13 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { EmployeeAddComponent } from './components/employees/employee-add/employee-add.component';
 import {MaterialModule} from './material.module';
 import { EmployeeDeleteComponent } from './components/employees/employee-delete/employee-delete.component';
+import { EmployeeEditComponent } from './components/employees/employee-edit/employee-edit.component';
 
 
 const routes: Routes = [
   { path: 'employee-list', component: EmployeeListComponent },
   {path: 'employee-add', component: EmployeeAddComponent},
+  {path: 'employee-edit/?id', component: EmployeeEditComponent},
   { path: '', component: HomeComponent },
   {path: '**', component: PageNotFoundComponent}
 ];
@@ -30,6 +32,6 @@ const routes: Routes = [
     MaterialModule
   ],
   exports: [RouterModule],
-  declarations: [HomeComponent, PageNotFoundComponent, EmployeeListComponent, EmployeeAddComponent, EmployeeDeleteComponent]
+  declarations: [HomeComponent, PageNotFoundComponent, EmployeeListComponent, EmployeeAddComponent, EmployeeDeleteComponent, EmployeeEditComponent]
 })
 export class AppRoutingModule { }
