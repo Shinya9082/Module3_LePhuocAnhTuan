@@ -10,6 +10,8 @@ import {Router} from '@angular/router';
 })
 export class EmployeeAddComponent implements OnInit {
   public formAddNewEmployee: FormGroup;
+  public maxDate = new Date();
+  public minDate = new Date(1900, 0, 1);
   constructor(
     private formBuilder: FormBuilder,
     private employeeService: EmployeeService,

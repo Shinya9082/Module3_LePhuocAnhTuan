@@ -90,6 +90,19 @@
       "phoneNumber": "0912132132",
       "address": "Ngũ Hành Sơn - Đà Nẵng",
       "id": 7
+    },
+    {
+      "fullName": "Võ Văn Lâm",
+      "position": "Nhân Viên",
+      "academyLevel": "Đại học",
+      "group": "Kinh doanh",
+      "dateOfBirth": "1991-07-01T17:00:00.000Z",
+      "identityNumber": "201212201",
+      "salary": "10",
+      "email": "a@gmail.com",
+      "phoneNumber": "0905945413",
+      "address": "Sơn Trà - Đà Nẵng",
+      "id": 8
     }
   ],
   "customers": [

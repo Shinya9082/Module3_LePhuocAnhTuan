@@ -22,13 +22,12 @@
   </div>
   <div class="form-group">
     <p>Ngày Sinh</p>
-    <input class="form-control" type="date" formControlName="dateOfBirth">
-    <p *ngIf="formAddNewEmployee.controls.dateOfBirth.errors?.required && formAddNewEmployee.controls.dateOfBirth.touched" class="text-danger">Vui lòng nhập vào</p>
     <mat-form-field>
-      <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
+      <input [max]="maxDate" [min]="minDate" matInput [matDatepicker]="myDatepicker" class="form-control" formControlName="dateOfBirth" placeholder="Chọn ngày sinh">
+      <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+      <mat-datepicker #myDatepicker></mat-datepicker>
     </mat-form-field>
+    <p *ngIf="formAddNewEmployee.controls.dateOfBirth.errors?.required && formAddNewEmployee.controls.dateOfBirth.touched" class="text-danger">Vui lòng chọn một ngày</p>
   </div>
   <div class="form-group">
     <p>CMND</p>

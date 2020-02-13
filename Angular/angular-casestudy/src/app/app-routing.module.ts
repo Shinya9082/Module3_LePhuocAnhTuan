@@ -9,6 +9,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { EmployeeAddComponent } from './components/employees/employee-add/employee-add.component';
 import {MaterialModule} from './material.module';
+import { EmployeeDeleteComponent } from './components/employees/employee-delete/employee-delete.component';
 
 
 const routes: Routes = [
@@ -29,6 +30,6 @@ const routes: Routes = [
     MaterialModule
   ],
   exports: [RouterModule],
-  declarations: [HomeComponent, PageNotFoundComponent, EmployeeListComponent, EmployeeAddComponent]
+  declarations: [HomeComponent, PageNotFoundComponent, EmployeeListComponent, EmployeeAddComponent, EmployeeDeleteComponent]
 })
 export class AppRoutingModule { }
