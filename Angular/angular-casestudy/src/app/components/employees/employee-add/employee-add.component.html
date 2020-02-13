@@ -24,6 +24,11 @@
     <p>Ngày Sinh</p>
     <input class="form-control" type="date" formControlName="dateOfBirth">
     <p *ngIf="formAddNewEmployee.controls.dateOfBirth.errors?.required && formAddNewEmployee.controls.dateOfBirth.touched" class="text-danger">Vui lòng nhập vào</p>
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
   </div>
   <div class="form-group">
     <p>CMND</p>
