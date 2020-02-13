@@ -1,1 +1,11 @@
-<p>employee-delete works!</p>
+<h3>Xác Nhận</h3>
+<hr>
+<p class="my-3">
+  Xác nhận xóa nhân viên <span class="text-primary" >{{employeeFullName}}</span> này?
+  <br>
+  <span class="text-danger"> Lưu ý không thể hoàn tác!!!</span>
+</p>
+<div class="d-flex justify-content-center">
+  <button mat-dialog-close class="btn btn-warning mr-3">Hủy</button>
+  <button class="btn btn-danger" (click)="deleteEmployee()">Xóa</button>
+</div>

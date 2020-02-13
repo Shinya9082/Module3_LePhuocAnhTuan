@@ -14,4 +14,10 @@ export class EmployeeService {
   addNewEmployee(employee): Observable<any> {
     return this.http.post(this.apiUrl, employee);
   }
+  getEmployeeById(id: number): Observable<any> {
+    return this.http.get(this.apiUrl + '/' + id);
+  }
+  deleteEmployeeById(id: number): Observable<any> {
+    return this.http.delete(this.apiUrl + '/' + id);
+  }
 }

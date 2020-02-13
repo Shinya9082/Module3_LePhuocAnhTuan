@@ -40,7 +40,7 @@
         <td>{{employee.address}}</td>
         <td style="width: auto">
           <button class="btn btn-sm btn-warning mr-3">Sửa</button>
-          <button class="btn btn-sm btn-danger">Xóa</button>
+          <button class="btn btn-sm btn-danger" (click)="openDeleteDialog(employee.id)">Xóa</button>
         </td>
       </tr>
     </tbody>
