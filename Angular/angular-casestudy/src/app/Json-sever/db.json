@@ -81,34 +81,34 @@
   ],
   "customers": [
     {
-      "id": 1,
       "fullName": "Lê Phước Anh Tuấn",
-      "type": "Gold",
-      "dateOfBirth": "06/06/1993",
+      "type": "platinum",
+      "dateOfBirth": "2020-02-02T17:00:00.000Z",
       "identityNumber": "201656077",
       "email": "abcabc@gmail.com",
-      "phoneNumber": "0899859135",
-      "address": "Sơn trà, Đà Nẵng"
+      "phoneNumber": "0909859135",
+      "address": "Sơn trà, Đà Nẵng",
+      "id": 1
     },
     {
-      "id": 2,
       "fullName": "Lê Phước Anh Tuấn 2",
-      "type": "Gold",
-      "dateOfBirth": "06/06/1993",
+      "type": "gold",
+      "dateOfBirth": "1998-06-13T17:00:00.000Z",
       "identityNumber": "201656077",
       "email": "abcabc@gmail.com",
-      "phoneNumber": "0899859135",
-      "address": "Sơn trà, Đà Nẵng"
+      "phoneNumber": "0909859135",
+      "address": "Sơn trà, Đà Nẵng",
+      "id": 2
     },
     {
-      "id": 3,
       "fullName": "Lê Phước Anh Tuấn 3",
-      "type": "Gold",
-      "dateOfBirth": "06/06/1993",
+      "type": "platinum",
+      "dateOfBirth": "1997-06-17T17:00:00.000Z",
       "identityNumber": "201656077",
       "email": "abcabc@gmail.com",
-      "phoneNumber": "0899859135",
-      "address": "Sơn trà, Đà Nẵng"
+      "phoneNumber": "0909859135",
+      "address": "Sơn trà, Đà Nẵng",
+      "id": 3
     }
   ]
 }

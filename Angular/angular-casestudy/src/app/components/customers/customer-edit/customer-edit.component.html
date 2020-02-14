@@ -1,1 +1,55 @@
-<p>customer-edit works!</p>
+<h3 class="text-center">Sửa khách hàng</h3>
+<form class="w-75 mx-auto mt-3" [formGroup]="formEditCustomer">
+  <div class="form-group">
+    <p>Họ và Tên</p>
+    <input class="form-control" type="text" formControlName="fullName">
+    <p *ngIf="formEditCustomer.controls.fullName.errors?.required" class="text-danger">Vui lòng nhập vào</p>
+  </div>
+  <div class="form-group">
+    <mat-form-field appearance="legacy">
+      <mat-label>Loại Khách</mat-label>
+      <mat-select formControlName="type">
+        <mat-option value="diamond">Diamond</mat-option>
+        <mat-option value="platinum">Platinum</mat-option>
+        <mat-option value="gold">Gold</mat-option>
+        <mat-option value="silver">Silver</mat-option>
+        <mat-option value="member">Member</mat-option>
+      </mat-select>
+      <mat-error *ngIf="formEditCustomer.controls.type.errors?.required">Phải chọn một mục</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field>
+      <input [max]="maxDate" [min]="minDate" matInput [matDatepicker]="myDatepicker" class="form-control" formControlName="dateOfBirth" placeholder="Chọn ngày sinh">
+      <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+      <mat-datepicker #myDatepicker></mat-datepicker>
+    </mat-form-field>
+    <p *ngIf="formEditCustomer.controls.dateOfBirth.errors?.required" class="text-danger">Vui lòng chọn một ngày</p>
+  </div>
+  <div class="form-group">
+    <p>CMND</p>
+    <input class="form-control" type="text" formControlName="identityNumber">
+    <p *ngIf="formEditCustomer.controls.identityNumber.errors?.required " class="text-danger">Vui lòng nhập vào</p>
+    <p *ngIf="formEditCustomer.controls.identityNumber.errors?.pattern" class="text-danger">Không đúng. Vd: 201201201</p>
+  </div>
+  <div class="form-group">
+    <p>Email</p>
+    <input class="form-control" type="email" formControlName="email">
+    <p *ngIf="formEditCustomer.controls.email.errors?.required " class="text-danger">Vui lòng nhập vào</p>
+    <p *ngIf="formEditCustomer.controls.email.errors?.email" class="text-danger">Nhập sai định dạng Vd:abcabc@gmail.com</p>
+  </div>
+  <div class="form-group">
+    <p>SĐT</p>
+    <input class="form-control" type="text" formControlName="phoneNumber">
+    <p *ngIf="formEditCustomer.controls.phoneNumber.errors?.required" class="text-danger">Vui lòng nhập vào</p>
+    <p *ngIf="formEditCustomer.controls.phoneNumber.errors?.pattern" class="text-danger">Số điện thoại không xác định</p>
+  </div>
+  <div class="form-group">
+    <p>Địa Chỉ</p>
+    <input class="form-control" type="text" formControlName="address">
+    <p *ngIf="formEditCustomer.controls.address.errors?.required" class="text-danger">Vui lòng nhập vào</p>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <button [disabled]="formEditCustomer.invalid" class="btn btn-success mt-4" (click)="editCustomer()">Sửa</button>
+  </div>
+</form>
