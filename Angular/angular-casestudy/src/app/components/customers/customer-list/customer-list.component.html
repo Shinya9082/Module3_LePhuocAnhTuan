@@ -26,7 +26,7 @@
     <tr *ngFor="let customer of customers |filter:term | paginate: { itemsPerPage: 3, currentPage: p }">
       <td>{{customer.id | changeIdPipe: 'KH'}}</td>
       <td>{{customer.fullName}}</td>
-      <td>{{customer.type}}</td>
+      <td>{{customer.type | titlecase}}</td>
       <td>{{customer.dateOfBirth | date: 'dd/MM/yyyy'}}</td>
       <td>{{customer.identityNumber}}</td>
       <td>{{customer.email}}</td>

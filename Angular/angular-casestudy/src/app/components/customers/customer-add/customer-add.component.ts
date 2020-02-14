@@ -2,10 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {CustomerService} from '../../../services/customer.service';
 import {Router} from '@angular/router';
-interface CustomerType {
-  value: string;
-  viewValue: string;
-}
 @Component({
   selector: 'app-customer-add',
   templateUrl: './customer-add.component.html',
@@ -15,13 +11,6 @@ export class CustomerAddComponent implements OnInit {
   public formAddNewCustomer: FormGroup;
   public maxDate = new Date();
   public minDate = new Date(1900, 0, 1);
-  customerType: CustomerType[] = [
-    {value: 'diamond', viewValue: 'Diamond'},
-    {value: 'platinum', viewValue: 'Platinum'},
-    {value: 'gold', viewValue: 'Gold'},
-    {value: 'silver', viewValue: 'Silver'},
-    {value: 'member', viewValue: 'Member'}
-  ];
   constructor(
     private formBuilder: FormBuilder,
     private customerService: CustomerService,
@@ -41,9 +30,9 @@ export class CustomerAddComponent implements OnInit {
   }
 
   addCustomer() {
-    // this.customerService.addNewCustomer(this.formAddNewCustomer.value).subscribe(data => {
-    //     //   this.router.navigateByUrl('customer-list');
-    //     // });
+    this.customerService.addNewCustomer(this.formAddNewCustomer.value).subscribe(data => {
+          this.router.navigateByUrl('customer-list');
+        });
     console.log(this.formAddNewCustomer.value);
   }
 }

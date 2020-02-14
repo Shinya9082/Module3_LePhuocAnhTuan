@@ -6,19 +6,19 @@
     <p *ngIf="formAddNewCustomer.controls.fullName.errors?.required && formAddNewCustomer.controls.fullName.touched" class="text-danger">Vui lòng nhập vào</p>
   </div>
   <div class="form-group">
-    <p>Loại Khách</p>
-<!--    <input class="form-control" type="text" formControlName="type">-->
-    <select class="form-control" id="sel1" name="sellist1" formControlName="type">
-      <option>Diamond</option>
-      <option>Platinum</option>
-      <option>Gold</option>
-      <option>Silver</option>
-      <option>Member</option>
-    </select>
-    <p *ngIf="formAddNewCustomer.controls.type.errors?.required && formAddNewCustomer.controls.type.touched" class="text-danger">Vui lòng nhập vào</p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Loại Khách</mat-label>
+      <mat-select formControlName="type">
+        <mat-option value="diamond">Diamond</mat-option>
+        <mat-option value="platinum">Platinum</mat-option>
+        <mat-option value="gold">Gold</mat-option>
+        <mat-option value="silver">Silver</mat-option>
+        <mat-option value="member">Member</mat-option>
+      </mat-select>
+      <mat-error *ngIf="formAddNewCustomer.controls.type.errors?.required && formAddNewCustomer.controls.type.touched">Phải chọn một mục</mat-error>
+    </mat-form-field>
   </div>
   <div class="form-group">
-    <p>Ngày Sinh</p>
     <mat-form-field>
       <input [max]="maxDate" [min]="minDate" matInput [matDatepicker]="myDatepicker" class="form-control" formControlName="dateOfBirth" placeholder="Chọn ngày sinh">
       <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
