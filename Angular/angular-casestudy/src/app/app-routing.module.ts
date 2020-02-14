@@ -11,13 +11,21 @@ import { EmployeeAddComponent } from './components/employees/employee-add/employ
 import {MaterialModule} from './material.module';
 import { EmployeeDeleteComponent } from './components/employees/employee-delete/employee-delete.component';
 import { EmployeeEditComponent } from './components/employees/employee-edit/employee-edit.component';
+import { CustomerListComponent } from './components/customers/customer-list/customer-list.component';
+import { OrderListComponent } from './components/orders/order-list/order-list.component';
+import { OrdersDetailListComponent } from './components/oders-detail/orders-detail-list/orders-detail-list.component';
+import { ServiceListComponent } from './components/services/service-list/service-list.component';
 
 
 const routes: Routes = [
-  { path: 'employee-list', component: EmployeeListComponent },
+  {path: 'employee-list', component: EmployeeListComponent },
   {path: 'employee-add', component: EmployeeAddComponent},
   {path: 'employee-edit/:id', component: EmployeeEditComponent},
-  { path: '', component: HomeComponent },
+  {path: 'customer-list', component: CustomerListComponent},
+  {path: 'order-list', component: OrderListComponent},
+  {path: 'order-detail-list', component: OrdersDetailListComponent},
+  {path: 'service-list', component: ServiceListComponent},
+  {path: '', component: HomeComponent },
   {path: '**', component: PageNotFoundComponent}
 ];
 
@@ -38,6 +46,11 @@ const routes: Routes = [
     EmployeeListComponent,
     EmployeeAddComponent,
     EmployeeDeleteComponent,
-    EmployeeEditComponent]
+    EmployeeEditComponent,
+    CustomerListComponent,
+    OrderListComponent,
+    OrdersDetailListComponent,
+    ServiceListComponent
+  ]
 })
 export class AppRoutingModule { }
