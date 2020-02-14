@@ -110,5 +110,17 @@
       "address": "Sơn trà, Đà Nẵng",
       "id": 3
     }
+  ],
+  "services": [
+    {
+      "name": "villa",
+      "area": "10",
+      "floor": "2",
+      "maxPeople": "8",
+      "price": "100",
+      "rentType": "week",
+      "status": "true",
+      "id": 1
+    }
   ]
 }
