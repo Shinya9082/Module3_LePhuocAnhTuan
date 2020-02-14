@@ -1,1 +1,44 @@
-<p>service-list works!</p>
+<div class="row justify-content-between">
+  <h2>Danh sách khách hàng</h2>
+  <div class="d-flex">
+    <input class="form-control mr-3 " type="text"  placeholder="Nhập tên cần tìm kiếm" style="width: 400px; height: 100%"
+           [(ngModel)]="term">
+    <button class="btn btn-outline-primary" >Tìm kiếm</button>
+  </div>
+</div>
+<div class="row mt-3 px-3">
+  <button class="btn btn-primary " [routerLink]="['/service-add']">Thêm mới</button>
+  <table class="table mt-3 table-striped" style="font-size: 12px">
+    <thead>
+    <tr class="bg-secondary">
+      <th>ID</th>
+      <th>Tên dịch vụ</th>
+      <th>Diện tích</th>
+      <th>Số Tầng</th>
+      <th>Tối Đa</th>
+      <th>Giá</th>
+      <th>Kiểu Thuê</th>
+      <th>Trạng Thái</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let service of services |filter:term | paginate: { itemsPerPage: 3, currentPage: p }">
+      <td>{{service.id | changeIdPipe: 'DV'}}</td>
+      <td>{{service.name+' '+service.id}}</td>
+      <td>{{service.area +' m2'}}</td>
+      <td>{{service.floor +' tầng'}}</td>
+      <td>{{service.maxPeople +' người'}}</td>
+      <td>{{service.price+' nghàn Đồng'}}</td>
+      <td>{{service.rentType | changeRentTypePipe | titlecase}}</td>
+      <td *ngIf="(service.status)">Khả dụng</td>
+      <td *ngIf="!(service.status)">Không khả dụng</td>
+      <td style="width: auto">
+        <button class="btn btn-sm btn-warning mr-3" [routerLink]="['/service-edit/'+service.id]">Sửa</button>
+        <button class="btn btn-sm btn-danger" (click)="openDeleteDialog(service.id)">Xóa</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>

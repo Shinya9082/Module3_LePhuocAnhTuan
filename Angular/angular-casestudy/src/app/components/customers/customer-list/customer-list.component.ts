@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CustomerService} from '../../../services/customer.service';
 import {MatDialog} from '@angular/material/dialog';
-import {CustomerDeleteComponent} from '../../customers/customer-delete/customer-delete.component';
+import {CustomerDeleteComponent} from '../customer-delete/customer-delete.component';
 
 @Component({
   selector: 'app-customer-list',
