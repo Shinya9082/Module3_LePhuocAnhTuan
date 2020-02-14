@@ -21,6 +21,7 @@ import { CustomerAddComponent } from './components/customers/customer-add/custom
 import { CustomerDeleteComponent } from './components/customers/customer-delete/customer-delete.component';
 import { CustomerEditComponent } from './components/customers/customer-edit/customer-edit.component';
 import {ChangeRentTypePipe} from './pipes/changeRentType';
+import { ServiceAddComponent } from './components/services/service-add/service-add.component';
 
 
 const routes: Routes = [
@@ -33,7 +34,7 @@ const routes: Routes = [
   {path: 'order-list', component: OrderListComponent},
   {path: 'order-detail-list', component: OrdersDetailListComponent},
   {path: 'service-list', component: ServiceListComponent},
-  {path: 'service-add', component: ServiceListComponent},
+  {path: 'service-add', component: ServiceAddComponent},
   {path: 'service-edit/:id', component: ServiceListComponent},
   {path: '', component: HomeComponent },
   {path: '**', component: PageNotFoundComponent}
@@ -66,7 +67,8 @@ const routes: Routes = [
     ChangeRentTypePipe,
     CustomerAddComponent,
     CustomerDeleteComponent,
-    CustomerEditComponent
+    CustomerEditComponent,
+    ServiceAddComponent
   ]
 })
 export class AppRoutingModule { }
