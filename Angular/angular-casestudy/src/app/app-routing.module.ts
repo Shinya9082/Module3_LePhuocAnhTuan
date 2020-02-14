@@ -19,6 +19,7 @@ import {ChangeIdPipe} from './pipes/changeIdPipe';
 import {ChangePhoneNumberPipe} from './pipes/changePhoneNumberPipe';
 import { CustomerAddComponent } from './components/customers/customer-add/customer-add.component';
 import { CustomerDeleteComponent } from './components/customers/customer-delete/customer-delete.component';
+import { CustomerEditComponent } from './components/customers/customer-edit/customer-edit.component';
 
 
 const routes: Routes = [
@@ -27,7 +28,7 @@ const routes: Routes = [
   {path: 'employee-edit/:id', component: EmployeeEditComponent},
   {path: 'customer-list', component: CustomerListComponent},
   {path: 'customer-add', component: CustomerAddComponent},
-  {path: 'customer-edit/:id', component: CustomerListComponent},
+  {path: 'customer-edit/:id', component: CustomerEditComponent},
   {path: 'order-list', component: OrderListComponent},
   {path: 'order-detail-list', component: OrdersDetailListComponent},
   {path: 'service-list', component: ServiceListComponent},
@@ -60,7 +61,8 @@ const routes: Routes = [
     ChangeIdPipe,
     ChangePhoneNumberPipe,
     CustomerAddComponent,
-    CustomerDeleteComponent
+    CustomerDeleteComponent,
+    CustomerEditComponent
   ]
 })
 export class AppRoutingModule { }
