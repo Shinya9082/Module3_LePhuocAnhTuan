@@ -1,1 +1,55 @@
-<p>customer-add works!</p>
+<h3 class="text-center">Thêm mới khách hàng</h3>
+<form class="w-75 mx-auto mt-3" [formGroup]="formAddNewCustomer">
+  <div class="form-group">
+    <p>Họ và Tên</p>
+    <input class="form-control" type="text" formControlName="fullName">
+    <p *ngIf="formAddNewCustomer.controls.fullName.errors?.required && formAddNewCustomer.controls.fullName.touched" class="text-danger">Vui lòng nhập vào</p>
+  </div>
+  <div class="form-group">
+    <p>Loại Khách</p>
+<!--    <input class="form-control" type="text" formControlName="type">-->
+    <select class="form-control" id="sel1" name="sellist1" formControlName="type">
+      <option>Diamond</option>
+      <option>Platinum</option>
+      <option>Gold</option>
+      <option>Silver</option>
+      <option>Member</option>
+    </select>
+    <p *ngIf="formAddNewCustomer.controls.type.errors?.required && formAddNewCustomer.controls.type.touched" class="text-danger">Vui lòng nhập vào</p>
+  </div>
+  <div class="form-group">
+    <p>Ngày Sinh</p>
+    <mat-form-field>
+      <input [max]="maxDate" [min]="minDate" matInput [matDatepicker]="myDatepicker" class="form-control" formControlName="dateOfBirth" placeholder="Chọn ngày sinh">
+      <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+      <mat-datepicker #myDatepicker></mat-datepicker>
+    </mat-form-field>
+    <p *ngIf="formAddNewCustomer.controls.dateOfBirth.errors?.required && formAddNewCustomer.controls.dateOfBirth.touched" class="text-danger">Vui lòng chọn một ngày</p>
+  </div>
+  <div class="form-group">
+    <p>CMND</p>
+    <input class="form-control" type="text" formControlName="identityNumber">
+    <p *ngIf="formAddNewCustomer.controls.identityNumber.errors?.required && formAddNewCustomer.controls.identityNumber.touched" class="text-danger">Vui lòng nhập vào</p>
+    <p *ngIf="formAddNewCustomer.controls.identityNumber.errors?.pattern && formAddNewCustomer.controls.identityNumber.touched" class="text-danger">Không đúng. Vd: 201201201</p>
+  </div>
+  <div class="form-group">
+    <p>Email</p>
+    <input class="form-control" type="email" formControlName="email">
+    <p *ngIf="formAddNewCustomer.controls.email.errors?.required && formAddNewCustomer.controls.email.touched" class="text-danger">Vui lòng nhập vào</p>
+    <p *ngIf="formAddNewCustomer.controls.email.errors?.email && formAddNewCustomer.controls.email.touched" class="text-danger">Nhập sai định dạng Vd:abcabc@gmail.com</p>
+  </div>
+  <div class="form-group">
+    <p>SĐT</p>
+    <input class="form-control" type="text" formControlName="phoneNumber">
+    <p *ngIf="formAddNewCustomer.controls.phoneNumber.errors?.required && formAddNewCustomer.controls.phoneNumber.touched" class="text-danger">Vui lòng nhập vào</p>
+    <p *ngIf="formAddNewCustomer.controls.phoneNumber.errors?.pattern && formAddNewCustomer.controls.phoneNumber.touched" class="text-danger">Số điện thoại không xác định</p>
+  </div>
+  <div class="form-group">
+    <p>Địa Chỉ</p>
+    <input class="form-control" type="text" formControlName="address">
+    <p *ngIf="formAddNewCustomer.controls.address.errors?.required && formAddNewCustomer.controls.address.touched" class="text-danger">Vui lòng nhập vào</p>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <button [disabled]="formAddNewCustomer.invalid" class="btn btn-success mt-4" (click)="addCustomer()">Thêm mới</button>
+  </div>
+</form>
