@@ -6,6 +6,7 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatSelectModule} from '@angular/material/select';
 
 
 
@@ -18,7 +19,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MatNativeDateModule,
     MatInputModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule
   ],
   exports: [
     MatDatepickerModule,
@@ -26,7 +28,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MatNativeDateModule,
     MatInputModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule
   ],
   providers: [ MatDatepickerModule ],
 })
