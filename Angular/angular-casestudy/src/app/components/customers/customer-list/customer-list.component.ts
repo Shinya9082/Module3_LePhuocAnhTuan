@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CustomerService} from '../../../services/customer.service';
 import {MatDialog} from '@angular/material/dialog';
+import {CustomerDeleteComponent} from '../../customers/customer-delete/customer-delete.component';
 
 @Component({
   selector: 'app-customer-list',
@@ -22,6 +23,19 @@ export class CustomerListComponent implements OnInit {
     });
   }
 
-  openDeleteDialog(id: any) {
+  openDeleteDialog(id: number): void {
+    this.customerService.getCustomerById(id).subscribe(next => {
+      const dialogRef = this.dialog.open(CustomerDeleteComponent, {
+        width: '500px',
+        data: {data1: next},
+        disableClose: true
+      });
+
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('The dialog was closed');
+        this.ngOnInit();
+      });
+    });
   }
+
 }

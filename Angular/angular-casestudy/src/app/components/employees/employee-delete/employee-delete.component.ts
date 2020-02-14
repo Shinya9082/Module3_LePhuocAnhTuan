@@ -9,7 +9,7 @@ import {EmployeeService} from '../../../services/employee.service';
 })
 export class EmployeeDeleteComponent implements OnInit {
   public employeeFullName: any;
-  public employeeId: any
+  public employeeId;
   constructor(
     public dialogRef: MatDialogRef<EmployeeDeleteComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
