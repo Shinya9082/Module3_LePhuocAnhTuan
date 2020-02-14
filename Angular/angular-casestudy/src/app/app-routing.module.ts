@@ -15,6 +15,8 @@ import { CustomerListComponent } from './components/customers/customer-list/cust
 import { OrderListComponent } from './components/orders/order-list/order-list.component';
 import { OrdersDetailListComponent } from './components/oders-detail/orders-detail-list/orders-detail-list.component';
 import { ServiceListComponent } from './components/services/service-list/service-list.component';
+import {ChangeIdPipe} from './pipes/changeIdPipe';
+import {ChangePhoneNumberPipe} from './pipes/changePhoneNumberPipe';
 
 
 const routes: Routes = [
@@ -50,7 +52,9 @@ const routes: Routes = [
     CustomerListComponent,
     OrderListComponent,
     OrdersDetailListComponent,
-    ServiceListComponent
+    ServiceListComponent,
+    ChangeIdPipe,
+    ChangePhoneNumberPipe
   ]
 })
 export class AppRoutingModule { }
