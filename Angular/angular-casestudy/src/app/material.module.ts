@@ -1,18 +1,18 @@
-// material.module.ts
-
 import { NgModule } from '@angular/core';
-
-
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import { CommonModule } from '@angular/common';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatDialogModule} from '@angular/material/dialog';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
-import {MatDialogModule} from '@angular/material/dialog';
-import {EmployeeDeleteComponent} from './components/employees/employee-delete/employee-delete.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+
 
 @NgModule({
+  declarations: [],
   imports: [
+    CommonModule,
     MatDatepickerModule,
     MatFormFieldModule,
     MatNativeDateModule,
@@ -30,5 +30,4 @@ import {EmployeeDeleteComponent} from './components/employees/employee-delete/em
   ],
   providers: [ MatDatepickerModule ],
 })
-
-export class MaterialModule {}
+export class MaterialModule { }
