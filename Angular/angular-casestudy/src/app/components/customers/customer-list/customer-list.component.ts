@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {CustomerService} from '../../../services/customer.service';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-customer-list',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./customer-list.component.scss']
 })
 export class CustomerListComponent implements OnInit {
+  public customers;
+  p = 1;
+  term: any;
+  constructor(
+    private customerService: CustomerService,
+    public dialog: MatDialog
+  ) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit( ) {
+    this.customerService.getAllCustomer().subscribe(data => {
+      this.customers = data;
+    });
   }
 
+  openDeleteDialog(id: any) {
+  }
 }
