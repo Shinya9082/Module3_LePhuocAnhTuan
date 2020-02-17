@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ServiceService} from '../../../services/service.service';
 import {MatDialog} from '@angular/material/dialog';
+import {ServiceDeleteComponent} from '../service-delete/service-delete.component';
 
 @Component({
   selector: 'app-service-list',
@@ -22,6 +23,17 @@ export class ServiceListComponent implements OnInit {
     });
   }
 
-  openDeleteDialog(id: any) {
+  openDeleteDialog(id: number) {
+    this.serviceService.getServiceById(id).subscribe(next => {
+      const dialogRef = this.dialog.open(ServiceDeleteComponent, {
+        width: '500px',
+        data: {data1: next},
+        disableClose: true
+      });
+
+      dialogRef.afterClosed().subscribe(result => {
+        this.ngOnInit();
+      });
+    });
   }
 }

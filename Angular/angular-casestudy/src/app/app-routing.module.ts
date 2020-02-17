@@ -22,6 +22,7 @@ import { CustomerDeleteComponent } from './components/customers/customer-delete/
 import { CustomerEditComponent } from './components/customers/customer-edit/customer-edit.component';
 import {ChangeRentTypePipe} from './pipes/changeRentType';
 import { ServiceAddComponent } from './components/services/service-add/service-add.component';
+import { ServiceDeleteComponent } from './components/services/service-delete/service-delete.component';
 
 
 const routes: Routes = [
@@ -68,7 +69,8 @@ const routes: Routes = [
     CustomerAddComponent,
     CustomerDeleteComponent,
     CustomerEditComponent,
-    ServiceAddComponent
+    ServiceAddComponent,
+    ServiceDeleteComponent
   ]
 })
 export class AppRoutingModule { }

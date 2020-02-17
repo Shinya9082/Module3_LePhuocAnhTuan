@@ -81,16 +81,6 @@
   ],
   "customers": [
     {
-      "fullName": "Lê Phước Anh Tuấn",
-      "type": "platinum",
-      "dateOfBirth": "2020-02-02T17:00:00.000Z",
-      "identityNumber": "201656077",
-      "email": "abcabc@gmail.com",
-      "phoneNumber": "0909859135",
-      "address": "Sơn trà, Đà Nẵng",
-      "id": 1
-    },
-    {
       "fullName": "Lê Phước Anh Tuấn 2",
       "type": "gold",
       "dateOfBirth": "1998-06-13T17:00:00.000Z",
@@ -124,13 +114,13 @@
     },
     {
       "name": "villa",
-      "area": "1",
-      "floor": "1",
-      "maxPeople": "1",
-      "price": "123",
+      "area": "123",
+      "floor": "123",
+      "maxPeople": "123",
+      "price": "12",
       "rentType": "year",
       "status": "true",
-      "id": 2
+      "id": 3
     }
   ]
 }
