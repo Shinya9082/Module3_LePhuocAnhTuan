@@ -7,7 +7,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatSelectModule} from '@angular/material/select';
-
+import {MatRadioModule} from '@angular/material/radio';
 
 
 @NgModule({
@@ -20,7 +20,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatInputModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    MatSelectModule
+    MatSelectModule,
+    MatRadioModule
   ],
   exports: [
     MatDatepickerModule,
@@ -29,7 +30,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatInputModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    MatSelectModule
+    MatSelectModule,
+    MatRadioModule
   ],
   providers: [ MatDatepickerModule ],
 })

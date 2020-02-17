@@ -121,6 +121,16 @@
       "rentType": "week",
       "status": "true",
       "id": 1
+    },
+    {
+      "name": "villa",
+      "area": "1",
+      "floor": "1",
+      "maxPeople": "1",
+      "price": "123",
+      "rentType": "year",
+      "status": "true",
+      "id": 2
     }
   ]
 }

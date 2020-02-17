@@ -41,15 +41,15 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes),
-    CommonModule,
-    Ng2SearchPipeModule,
-    FormsModule,
-    NgxPaginationModule,
-    ReactiveFormsModule,
-    MaterialModule
-  ],
+    imports: [
+        RouterModule.forRoot(routes),
+        CommonModule,
+        Ng2SearchPipeModule,
+        FormsModule,
+        NgxPaginationModule,
+        ReactiveFormsModule,
+        MaterialModule,
+    ],
   exports: [RouterModule],
   declarations: [
     HomeComponent,

@@ -1,1 +1,81 @@
-<p>service-add works!</p>
+<h3 class="text-center">Thêm mới khách hàng</h3>
+<form class="w-75 mx-auto mt-3" [formGroup]="formAddNewService">
+  <div class="form-group">
+    <mat-form-field appearance="legacy">
+      <mat-label>Tên dịch vụ</mat-label>
+      <mat-select formControlName="name">
+        <mat-option value="villa">Villa</mat-option>
+        <mat-option value="house">House</mat-option>
+        <mat-option value="room">Room</mat-option>
+      </mat-select>
+      <mat-error *ngIf="formAddNewService.controls.name.errors?.required && formAddNewService.controls.name.touched">
+        Phải chọn một mục
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <p>Diện tích</p>
+    <input class="form-control" type="text" formControlName="area">
+    <p
+      *ngIf="formAddNewService.controls.area.errors?.required
+        && formAddNewService.controls.area.touched
+        || formAddNewService.controls.area.errors?.pattern" class="text-danger">Vui lòng nhập vào số dương
+    </p>
+  </div>
+  <div class="form-group">
+    <p>Số Tầng</p>
+    <input class="form-control" type="text" formControlName="floor">
+    <p
+      *ngIf="formAddNewService.controls.floor.errors?.required
+        && formAddNewService.controls.floor.touched
+        || formAddNewService.controls.floor.errors?.pattern" class="text-danger">Vui lòng nhập vào số dương
+    </p>
+  </div>
+  <div class="form-group">
+    <p>Số người tối đa</p>
+    <input class="form-control" type="text" formControlName="maxPeople">
+    <p
+      *ngIf="formAddNewService.controls.maxPeople.errors?.required
+        && formAddNewService.controls.maxPeople.touched
+        || formAddNewService.controls.maxPeople.errors?.pattern" class="text-danger">Vui lòng nhập vào số dương
+    </p>
+  </div>
+  <div class="form-group">
+    <p>Giá thuê</p>
+    <input class="form-control" type="text" formControlName="price">
+    <p
+      *ngIf="formAddNewService.controls.price.errors?.required
+        && formAddNewService.controls.price.touched
+        || formAddNewService.controls.price.errors?.pattern" class="text-danger">Vui lòng nhập vào số dương
+    </p>
+  </div>
+  <div class="form-group">
+    <mat-form-field appearance="legacy">
+      <mat-label>Kiểu thuê theo</mat-label>
+      <mat-select formControlName="rentType">
+        <mat-option value="hour">Giờ</mat-option>
+        <mat-option value="day">Ngày</mat-option>
+        <mat-option value="week">Tuần</mat-option>
+        <mat-option value="month">Tháng</mat-option>
+        <mat-option value="year">Năm</mat-option>
+      </mat-select>
+      <mat-error
+        *ngIf="formAddNewService.controls.rentType.errors?.required && formAddNewService.controls.rentType.touched">
+        Phải chọn một mục
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-radio-group aria-label="Trạng thái" formControlName="status">
+      <mat-radio-button value="true" class="mr-3">Khả dụng</mat-radio-button>
+      <mat-radio-button value="false">Không khả dụng</mat-radio-button>
+    </mat-radio-group>
+    <mat-error
+      *ngIf="formAddNewService.controls.rentType.errors?.required && formAddNewService.controls.rentType.touched">
+      Phải chọn một mục
+    </mat-error>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <button [disabled]="formAddNewService.invalid" class="btn btn-success mt-4" (click)="addService()">Thêm mới</button>
+  </div>
+</form>
