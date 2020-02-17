@@ -1,1 +1,81 @@
-<p>service-edit works!</p>
+<h3 class="text-center">Sửa đổi dịch vụ</h3>
+<form class="w-75 mx-auto mt-3" [formGroup]="formEditService">
+  <div class="form-group">
+    <mat-form-field appearance="legacy">
+      <mat-label>Tên dịch vụ</mat-label>
+      <mat-select formControlName="name">
+        <mat-option value="villa">Villa</mat-option>
+        <mat-option value="house">House</mat-option>
+        <mat-option value="room">Room</mat-option>
+      </mat-select>
+      <mat-error *ngIf="formEditService.controls.name.errors?.required && formEditService.controls.name.touched">
+        Phải chọn một mục
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <p>Diện tích</p>
+    <input class="form-control" type="text" formControlName="area">
+    <p
+      *ngIf="formEditService.controls.area.errors?.required
+        && formEditService.controls.area.touched
+        || formEditService.controls.area.errors?.pattern" class="text-danger">Vui lòng nhập vào số dương
+    </p>
+  </div>
+  <div class="form-group">
+    <p>Số Tầng</p>
+    <input class="form-control" type="text" formControlName="floor">
+    <p
+      *ngIf="formEditService.controls.floor.errors?.required
+        && formEditService.controls.floor.touched
+        || formEditService.controls.floor.errors?.pattern" class="text-danger">Vui lòng nhập vào số dương
+    </p>
+  </div>
+  <div class="form-group">
+    <p>Số người tối đa</p>
+    <input class="form-control" type="text" formControlName="maxPeople">
+    <p
+      *ngIf="formEditService.controls.maxPeople.errors?.required
+        && formEditService.controls.maxPeople.touched
+        || formEditService.controls.maxPeople.errors?.pattern" class="text-danger">Vui lòng nhập vào số dương
+    </p>
+  </div>
+  <div class="form-group">
+    <p>Giá thuê</p>
+    <input class="form-control" type="text" formControlName="price">
+    <p
+      *ngIf="formEditService.controls.price.errors?.required
+        && formEditService.controls.price.touched
+        || formEditService.controls.price.errors?.pattern" class="text-danger">Vui lòng nhập vào số dương
+    </p>
+  </div>
+  <div class="form-group">
+    <mat-form-field appearance="legacy">
+      <mat-label>Kiểu thuê theo</mat-label>
+      <mat-select formControlName="rentType">
+        <mat-option value="hour">Giờ</mat-option>
+        <mat-option value="day">Ngày</mat-option>
+        <mat-option value="week">Tuần</mat-option>
+        <mat-option value="month">Tháng</mat-option>
+        <mat-option value="year">Năm</mat-option>
+      </mat-select>
+      <mat-error
+        *ngIf="formEditService.controls.rentType.errors?.required && formEditService.controls.rentType.touched">
+        Phải chọn một mục
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-radio-group aria-label="Trạng thái" formControlName="status">
+      <mat-radio-button value="true" class="mr-3">Khả dụng</mat-radio-button>
+      <mat-radio-button value="false">Không khả dụng</mat-radio-button>
+    </mat-radio-group>
+    <mat-error
+      *ngIf="formEditService.controls.rentType.errors?.required && formEditService.controls.rentType.touched">
+      Phải chọn một mục
+    </mat-error>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <button [disabled]="formEditService.invalid" class="btn btn-success mt-4" (click)="editService()">Sửa</button>
+  </div>
+</form>

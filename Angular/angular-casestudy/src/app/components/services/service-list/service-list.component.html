@@ -31,8 +31,8 @@
       <td>{{service.maxPeople +' người'}}</td>
       <td>{{service.price+' nghàn Đồng'}}</td>
       <td>{{service.rentType | changeRentTypePipe | titlecase}}</td>
-      <td *ngIf="(service.status)">Khả dụng</td>
-      <td *ngIf="!(service.status)">Không khả dụng</td>
+      <td *ngIf="service.status==='true'">Khả dụng</td>
+      <td *ngIf="service.status==='false'">Không khả dụng</td>
       <td style="width: auto">
         <button class="btn btn-sm btn-warning mr-3" [routerLink]="['/service-edit/'+service.id]">Sửa</button>
         <button class="btn btn-sm btn-danger" (click)="openDeleteDialog(service.id)">Xóa</button>

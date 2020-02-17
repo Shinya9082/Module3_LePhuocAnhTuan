@@ -114,11 +114,11 @@
     },
     {
       "name": "villa",
-      "area": "123",
-      "floor": "123",
-      "maxPeople": "123",
+      "area": "333",
+      "floor": "33",
+      "maxPeople": "33",
       "price": "12",
-      "rentType": "year",
+      "rentType": "hour",
       "status": "true",
       "id": 3
     }
