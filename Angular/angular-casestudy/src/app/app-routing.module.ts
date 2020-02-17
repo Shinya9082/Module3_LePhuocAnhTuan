@@ -24,6 +24,7 @@ import {ChangeRentTypePipe} from './pipes/changeRentType';
 import { ServiceAddComponent } from './components/services/service-add/service-add.component';
 import { ServiceDeleteComponent } from './components/services/service-delete/service-delete.component';
 import { ServiceEditComponent } from './components/services/service-edit/service-edit.component';
+import { OrderAddComponent } from './components/orders/order-add/order-add.component';
 
 
 const routes: Routes = [
@@ -34,6 +35,7 @@ const routes: Routes = [
   {path: 'customer-add', component: CustomerAddComponent},
   {path: 'customer-edit/:id', component: CustomerEditComponent},
   {path: 'order-list', component: OrderListComponent},
+  {path: 'order-add', component: OrderAddComponent},
   {path: 'order-detail-list', component: OrdersDetailListComponent},
   {path: 'service-list', component: ServiceListComponent},
   {path: 'service-add', component: ServiceAddComponent},
@@ -72,7 +74,8 @@ const routes: Routes = [
     CustomerEditComponent,
     ServiceAddComponent,
     ServiceDeleteComponent,
-    ServiceEditComponent
+    ServiceEditComponent,
+    OrderAddComponent
   ]
 })
 export class AppRoutingModule { }
