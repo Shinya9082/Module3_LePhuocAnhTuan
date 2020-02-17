@@ -10,7 +10,6 @@ import {MatPaginator} from '@angular/material/paginator';
   styleUrls: ['./employee-select-dialog.component.scss']
 })
 export class EmployeeSelectDialogComponent implements OnInit {
-  employeeId;
   displayedColumns: string[] = ['id', 'fullName', 'choose'];
   dataSource;
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
@@ -36,9 +35,5 @@ export class EmployeeSelectDialogComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
-
-  selectEmployee(element: any) {
-
   }
 }

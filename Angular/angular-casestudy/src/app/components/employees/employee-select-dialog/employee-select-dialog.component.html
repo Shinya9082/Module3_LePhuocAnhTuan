@@ -1,16 +1,10 @@
 <h1 mat-dialog-title>Chọn một nhân viên</h1>
 <div mat-dialog-content>
-  <!--  <p>What's your favorite animal?</p>-->
-  <!--  <mat-form-field>-->
-  <!--    <mat-label>Favorite Animal</mat-label>-->
-  <!--    <input matInput [(ngModel)]="data.employee">-->
-  <!--  </mat-form-field>-->
   <mat-form-field>
     <mat-label>Tìm kiếm theo tên</mat-label>
     <input matInput (keyup)="applyFilter($event)" placeholder="Vd: Lê Văn A">
   </mat-form-field>
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
     <!-- ID Column -->
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef> ID</th>
@@ -34,5 +28,4 @@
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">Hủy</button>
-  <button mat-button [mat-dialog-close]="data.employee" >Chọn</button>
 </div>
