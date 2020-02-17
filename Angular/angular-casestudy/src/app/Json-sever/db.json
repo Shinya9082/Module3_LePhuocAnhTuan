@@ -122,5 +122,47 @@
       "status": "true",
       "id": 3
     }
+  ],
+  "orders": [
+    {
+      "employee": {
+        "fullName": "Lê Phước Anh Tuấn 1",
+        "position": "Nhân viên",
+        "academyLevel": "Đại học",
+        "group": "Kinh doanh",
+        "dateOfBirth": "1993-09-05T17:00:00.000Z",
+        "identityNumber": "201656077",
+        "salary": "10",
+        "email": "abcabc@gmail.com",
+        "phoneNumber": "0909859135",
+        "address": "Sơn trà, Đà Nẵng",
+        "id": 1
+      },
+      "customer": {
+        "fullName": "Lê Phước Anh Tuấn 2",
+        "type": "gold",
+        "dateOfBirth": "1998-06-13T17:00:00.000Z",
+        "identityNumber": "201656077",
+        "email": "abcabc@gmail.com",
+        "phoneNumber": "0909859135",
+        "address": "Sơn trà, Đà Nẵng",
+        "id": 2
+      },
+      "service": {
+        "name": "villa",
+        "area": "10",
+        "floor": "2",
+        "maxPeople": "8",
+        "price": "100",
+        "rentType": "week",
+        "status": "true",
+        "id": 1
+      },
+      "dateStart": "8",
+      "dateEnd": "100",
+      "deposits": "20",
+      "total": "10",
+      "id": 1
+    }
   ]
 }

@@ -1,1 +1,33 @@
-<p>order-list works!</p>
+<div class="row justify-content-between">
+  <h2>Danh sách hợp đồng</h2>
+</div>
+<div class="row mt-3 px-3">
+  <button class="btn btn-primary " [routerLink]="['/order-add']">Thêm mới</button>
+  <table class="table mt-3 table-striped" style="font-size: 12px">
+    <thead>
+    <tr class="bg-secondary">
+      <th>ID</th>
+      <th>Nhân viên</th>
+      <th>Khách hàng</th>
+      <th>Dịch vụ</th>
+      <th>Ngày bắt đầu</th>
+      <th>Ngày kết thúc</th>
+      <th>Tiền cọc</th>
+      <th>Tổng cộng</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let order of orders | paginate: { itemsPerPage: 3, currentPage: p }">
+      <td>{{order.id | changeIdPipe: 'HĐ'}}</td>
+      <td>{{order.employee.fullName}}</td>
+      <td>{{order.customer.fullName}}</td>
+      <td>{{order.service.name +' '+ order.service.id}}</td>
+      <td>{{order.dateStart}}</td>
+      <td>{{order.dateEnd}}</td>
+      <td>{{order.deposits}}</td>
+      <td>{{order.total}}</td>
+    </tr>
+    </tbody>
+  </table>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
