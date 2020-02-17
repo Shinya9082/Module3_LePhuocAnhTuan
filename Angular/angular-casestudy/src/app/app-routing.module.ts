@@ -23,6 +23,7 @@ import { CustomerEditComponent } from './components/customers/customer-edit/cust
 import {ChangeRentTypePipe} from './pipes/changeRentType';
 import { ServiceAddComponent } from './components/services/service-add/service-add.component';
 import { ServiceDeleteComponent } from './components/services/service-delete/service-delete.component';
+import { ServiceEditComponent } from './components/services/service-edit/service-edit.component';
 
 
 const routes: Routes = [
@@ -36,7 +37,7 @@ const routes: Routes = [
   {path: 'order-detail-list', component: OrdersDetailListComponent},
   {path: 'service-list', component: ServiceListComponent},
   {path: 'service-add', component: ServiceAddComponent},
-  {path: 'service-edit/:id', component: ServiceListComponent},
+  {path: 'service-edit/:id', component: ServiceEditComponent},
   {path: '', component: HomeComponent },
   {path: '**', component: PageNotFoundComponent}
 ];
@@ -70,7 +71,8 @@ const routes: Routes = [
     CustomerDeleteComponent,
     CustomerEditComponent,
     ServiceAddComponent,
-    ServiceDeleteComponent
+    ServiceDeleteComponent,
+    ServiceEditComponent
   ]
 })
 export class AppRoutingModule { }
