@@ -27,7 +27,6 @@ import { ServiceEditComponent } from './components/services/service-edit/service
 import { OrderAddComponent } from './components/orders/order-add/order-add.component';
 import { EmployeeSelectDialogComponent } from './components/employees/employee-select-dialog/employee-select-dialog.component';
 
-
 const routes: Routes = [
   {path: 'employee-list', component: EmployeeListComponent },
   {path: 'employee-add', component: EmployeeAddComponent},
@@ -46,15 +45,15 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [
-        RouterModule.forRoot(routes),
-        CommonModule,
-        Ng2SearchPipeModule,
-        FormsModule,
-        NgxPaginationModule,
-        ReactiveFormsModule,
-        MaterialModule,
-    ],
+  imports: [
+    RouterModule.forRoot(routes),
+    CommonModule,
+    Ng2SearchPipeModule,
+    FormsModule,
+    NgxPaginationModule,
+    ReactiveFormsModule,
+    MaterialModule,
+  ],
   exports: [RouterModule],
   declarations: [
     HomeComponent,
