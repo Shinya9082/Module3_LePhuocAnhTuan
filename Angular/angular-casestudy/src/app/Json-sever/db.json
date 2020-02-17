@@ -40,7 +40,6 @@
       "address": "Gò nỗi, Quảng Nam"
     },
     {
-      "id": 4,
       "fullName": "Huỳnh Quang Tấn",
       "position": "Bảo vệ",
       "academyLevel": "Tốt Nghiệp",
@@ -50,7 +49,8 @@
       "salary": "6",
       "email": "",
       "phoneNumber": "0899859055",
-      "address": "Liên chiểu, Đà Nẵng"
+      "address": "Liên chiểu, Đà Nẵng",
+      "id": 4
     },
     {
       "fullName": "Nguyễn Văn Ban",
@@ -77,6 +77,19 @@
       "phoneNumber": "0905945413",
       "address": "Sơn Trà - Đà Nẵng",
       "id": 8
+    },
+    {
+      "fullName": "Lê Văn A",
+      "position": "Nhân viên",
+      "academyLevel": "Đại học",
+      "group": "Kinh doanh",
+      "dateOfBirth": "2000-02-06T17:00:00.000Z",
+      "identityNumber": "201201201",
+      "salary": "8",
+      "email": "abc@gmail.com",
+      "phoneNumber": "0909859130",
+      "address": "abc",
+      "id": 9
     }
   ],
   "customers": [

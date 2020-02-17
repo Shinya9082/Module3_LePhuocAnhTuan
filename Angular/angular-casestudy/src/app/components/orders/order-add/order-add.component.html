@@ -1,1 +1,12 @@
-<p>order-add works!</p>
+<h3 class="text-center">Thêm mới hợp đồng</h3>
+<form class="w-75 mx-auto mt-3" [formGroup]="formAddNewOrder">
+  <div class="form-group">
+    <label style="margin-right: 10px ">Nhân viên: </label>
+    <span *ngIf="employee" style="margin-right: 10px"><i>{{employee.fullName}}</i></span>
+    <button mat-raised-button (click)="openEmployeeDialog()">Chọn</button>
+    <p class="text-danger"
+      *ngIf="formAddNewOrder.controls.employee.errors?.required
+        && formAddNewOrder.controls.employee.touched">Vui chọn nhân viên
+    </p>
+  </div>
+</form>
