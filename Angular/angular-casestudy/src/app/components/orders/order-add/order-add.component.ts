@@ -7,6 +7,7 @@ import {CustomerService} from '../../../services/customer.service';
 import {ServiceService} from '../../../services/service.service';
 import {EmployeeSelectDialogComponent} from '../../employees/employee-select-dialog/employee-select-dialog.component';
 import {MatDialog} from '@angular/material/dialog';
+import {CustomerSelectDialogComponent} from '../../customers/customer-select-dialog/customer-select-dialog.component';
 
 @Component({
   selector: 'app-order-add',
@@ -17,6 +18,7 @@ export class OrderAddComponent implements OnInit {
   public formAddNewOrder: FormGroup;
   public order;
   public employee;
+  public customer;
   public minDate = new Date();
   constructor(
     private formBuilder: FormBuilder,
@@ -51,6 +53,20 @@ export class OrderAddComponent implements OnInit {
       this.employee = result;
       }
       console.log(this.employee);
+    });
+  }
+  openCustomerDialog(): void {
+    const dialogRef = this.dialog.open(CustomerSelectDialogComponent, {
+      width: '50%',
+      position: {top: '10%'},
+      data: {employee: this.customer}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+      this.customer = result;
+      }
+      console.log(this.customer);
     });
   }
 }

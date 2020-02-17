@@ -26,6 +26,7 @@ import { ServiceDeleteComponent } from './components/services/service-delete/ser
 import { ServiceEditComponent } from './components/services/service-edit/service-edit.component';
 import { OrderAddComponent } from './components/orders/order-add/order-add.component';
 import { EmployeeSelectDialogComponent } from './components/employees/employee-select-dialog/employee-select-dialog.component';
+import { CustomerSelectDialogComponent } from './components/customers/customer-select-dialog/customer-select-dialog.component';
 
 const routes: Routes = [
   {path: 'employee-list', component: EmployeeListComponent },
@@ -76,7 +77,8 @@ const routes: Routes = [
     ServiceDeleteComponent,
     ServiceEditComponent,
     OrderAddComponent,
-    EmployeeSelectDialogComponent
+    EmployeeSelectDialogComponent,
+    CustomerSelectDialogComponent
   ]
 })
 export class AppRoutingModule { }
