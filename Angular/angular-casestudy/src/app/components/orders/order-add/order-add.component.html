@@ -4,20 +4,20 @@
     <label style="margin-right: 10px ">Nhân viên: </label>
     <span *ngIf="employee" style="margin-right: 10px"><i style="color: #1879ff">{{employee.fullName}}</i></span>
     <button mat-raised-button (click)="openEmployeeDialog()">Chọn</button>
-    <span class="text-danger ml-3" *ngIf="!employee">Vui chọn nhân viên </span>
+    <span class="text-danger ml-3" *ngIf="!employee">Vui lòng chọn nhân viên </span>
   </div>
   <div class="form-group">
     <label style="margin-right: 10px ">Khách hàng: </label>
     <span *ngIf="customer" style="margin-right: 10px"><i style="color: #1879ff">{{customer.fullName}}</i></span>
     <button mat-raised-button (click)="openCustomerDialog()">Chọn</button>
-    <span class="text-danger ml-3" *ngIf="!customer">Vui chọn khách hàng </span>
+    <span class="text-danger ml-3" *ngIf="!customer">Vui lòng chọn khách hàng </span>
   </div>
   <div class="form-group">
     <label style="margin-right: 10px ">Dịch vụ: </label>
     <span *ngIf="service" style="margin-right: 10px"><i
       style="color: #1879ff">{{service.name + ' ' + service.id}}</i></span>
     <button mat-raised-button (click)="openServiceDialog()">Chọn</button>
-    <span class="text-danger ml-3" *ngIf="!service">Vui chọn dịch vụ </span>
+    <span class="text-danger ml-3" *ngIf="!service">Vui lòng chọn dịch vụ </span>
   </div>
   <div class="form-group">
     <div class="row">
