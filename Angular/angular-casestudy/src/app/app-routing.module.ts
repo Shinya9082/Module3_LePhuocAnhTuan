@@ -8,7 +8,7 @@ import {Ng2SearchPipeModule} from 'ng2-search-filter';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { EmployeeAddComponent } from './components/employees/employee-add/employee-add.component';
-import {MaterialModule} from './material.module';
+import { MaterialModule } from './material.module';
 import { EmployeeDeleteComponent } from './components/employees/employee-delete/employee-delete.component';
 import { EmployeeEditComponent } from './components/employees/employee-edit/employee-edit.component';
 import { CustomerListComponent } from './components/customers/customer-list/customer-list.component';
@@ -57,6 +57,7 @@ const routes: Routes = [
     FormsModule,
     NgxPaginationModule,
     ReactiveFormsModule,
+    MaterialModule,
     MaterialModule,
   ],
   exports: [RouterModule],

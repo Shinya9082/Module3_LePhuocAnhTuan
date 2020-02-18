@@ -23,7 +23,8 @@
     <div class="row">
       <div class="col-md-6">
         <mat-form-field>
-          <input [min]="minDate" matInput [matDatepicker]="myDatepicker" class="form-control"
+          <input [min]="minDate" [max]="formAddNewOrder.value.dateEnd" matInput [matDatepicker]="myDatepicker"
+                 class="form-control"
                  formControlName="dateStart" placeholder="Ngày làm hợp đồng">
           <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
           <mat-datepicker #myDatepicker></mat-datepicker>
@@ -35,7 +36,8 @@
       </div>
       <div class="col-md-6">
         <mat-form-field>
-          <input [min]="minDate" matInput [matDatepicker]="myDatepicker1" class="form-control" formControlName="dateEnd"
+          <input [min]="(formAddNewOrder.value.dateStart)? formAddNewOrder.value.dateStart: minDate" matInput
+                 [matDatepicker]="myDatepicker1" class="form-control" formControlName="dateEnd"
                  placeholder="Ngày kết thúc hợp đồng">
           <mat-datepicker-toggle matSuffix [for]="myDatepicker1"></mat-datepicker-toggle>
           <mat-datepicker #myDatepicker1></mat-datepicker>
