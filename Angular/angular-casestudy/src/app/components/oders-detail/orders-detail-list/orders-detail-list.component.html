@@ -1,1 +1,32 @@
-<p>orders-detail-list works!</p>
+<div class="row justify-content-between">
+  <h2>Danh sách hợp đồng chi tiết</h2>
+</div>
+<button mat-raised-button color="primary" [routerLink]="['/order-detail-add']" >Thêm mới</button>
+<div class="row mt-3 px-3">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID</th>
+      <td mat-cell *matCellDef="let element">{{element.id|changeIdPipe: 'HĐCT'}}</td>
+    </ng-container>
+    <ng-container matColumnDef="order">
+      <th mat-header-cell *matHeaderCellDef> Ngày bắt đầu</th>
+      <td mat-cell *matCellDef="let element"> {{element.order.id | changeIdPipe:'HĐ'}}</td>
+    </ng-container>
+    <ng-container matColumnDef="attachService">
+      <th mat-header-cell *matHeaderCellDef> Ngày kết thúc</th>
+      <td mat-cell *matCellDef="let element"> {{element.attachService.name}}</td>
+    </ng-container>
+    <ng-container matColumnDef="amount">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">{{element.amount}}  </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+<div class="row mt-4">
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
+
+
+

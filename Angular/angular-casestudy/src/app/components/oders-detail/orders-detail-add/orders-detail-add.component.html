@@ -4,7 +4,7 @@
     <label style="margin-right: 10px ">Nhân viên: </label>
     <span *ngIf="order" style="margin-right: 10px"><i style="color: #1879ff">{{order.id | changeIdPipe:'HĐ'}}</i></span>
     <button mat-raised-button (click)="openOrderDialog()">Chọn</button>
-    <span class="text-danger ml-3" *ngIf="!order">Vui chọn hợp đồng </span>
+    <span class="text-danger ml-3" *ngIf="!order">Vui lòng chọn hợp đồng </span>
   </div>
   <div class="form-group" >
     <mat-form-field appearance="legacy">
@@ -28,7 +28,5 @@
       </mat-error>
     </mat-form-field>
   </div>
-  <div class="row d-flex justify-content-center">
-    <button [disabled]="formAddNewOrderDetail.invalid" mat-raised-button color="primary" (click)="addOrder()">Thêm mới</button>
-  </div>
+  <button [disabled]="formAddNewOrderDetail.invalid" mat-raised-button color="primary" (click)="addOrder()">Thêm mới</button>
 </form>
