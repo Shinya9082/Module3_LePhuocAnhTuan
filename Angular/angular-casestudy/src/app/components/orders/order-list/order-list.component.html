@@ -19,11 +19,11 @@
     <tbody>
     <tr *ngFor="let order of orders | paginate: { itemsPerPage: 3, currentPage: p }">
       <td>{{order.id | changeIdPipe: 'HĐ'}}</td>
-      <td>{{order.employee.fullName}}</td>
-      <td>{{order.customer.fullName}}</td>
+      <td>{{order.employee.fullName| titlecase}}</td>
+      <td>{{order.customer.fullName| titlecase}}</td>
       <td>{{order.service.name +' '+ order.service.id}}</td>
-      <td>{{order.dateStart}}</td>
-      <td>{{order.dateEnd}}</td>
+      <td>{{order.dateStart |date: 'dd/MM/yyyy'}}</td>
+      <td>{{order.dateEnd |date: 'dd/MM/yyyy'}}</td>
       <td>{{order.deposits}}</td>
       <td>{{order.total}}</td>
     </tr>

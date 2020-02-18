@@ -28,6 +28,7 @@ import { OrderAddComponent } from './components/orders/order-add/order-add.compo
 import { EmployeeSelectDialogComponent } from './components/employees/employee-select-dialog/employee-select-dialog.component';
 import { CustomerSelectDialogComponent } from './components/customers/customer-select-dialog/customer-select-dialog.component';
 import { ServiceSelectDialogComponent } from './components/services/service-select-dialog/service-select-dialog.component';
+import { OrderSelectDialogComponent } from './components/orders/order-select-dialog/order-select-dialog.component';
 
 const routes: Routes = [
   {path: 'employee-list', component: EmployeeListComponent },
@@ -80,7 +81,8 @@ const routes: Routes = [
     OrderAddComponent,
     EmployeeSelectDialogComponent,
     CustomerSelectDialogComponent,
-    ServiceSelectDialogComponent
+    ServiceSelectDialogComponent,
+    OrderSelectDialogComponent
   ]
 })
 export class AppRoutingModule { }

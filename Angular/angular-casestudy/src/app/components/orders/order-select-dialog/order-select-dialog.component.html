@@ -1,0 +1,33 @@
+<h1 mat-dialog-title>Hợp đồng hiện tại</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Tìm kiếm theo id</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Vd: 0001 cho (HĐ-0001)">
+  </mat-form-field>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID</th>
+      <td mat-cell *matCellDef="let element">{{element.id|changeIdPipe: 'HĐ'}}</td>
+    </ng-container>
+    <ng-container matColumnDef="dateStart">
+      <th mat-header-cell *matHeaderCellDef> Ngày bắt đầu</th>
+      <td mat-cell *matCellDef="let element"> {{element.dateStart}}</td>
+    </ng-container>
+    <ng-container matColumnDef="dateEnd">
+      <th mat-header-cell *matHeaderCellDef> Ngày kết thúc</th>
+      <td mat-cell *matCellDef="let element"> {{element.dateEnd}}</td>
+    </ng-container>
+    <ng-container matColumnDef="choose">
+      <th mat-header-cell *matHeaderCellDef> chose</th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-button [mat-dialog-close]="element">Chọn</button>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Hủy</button>
+</div>

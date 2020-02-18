@@ -2,9 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {OrderService} from '../../../services/order.service';
 import {Router} from '@angular/router';
-import {EmployeeService} from '../../../services/employee.service';
-import {CustomerService} from '../../../services/customer.service';
-import {ServiceService} from '../../../services/service.service';
 import {EmployeeSelectDialogComponent} from '../../employees/employee-select-dialog/employee-select-dialog.component';
 import {MatDialog} from '@angular/material/dialog';
 import {CustomerSelectDialogComponent} from '../../customers/customer-select-dialog/customer-select-dialog.component';
@@ -17,7 +14,6 @@ import {ServiceSelectDialogComponent} from '../../services/service-select-dialog
 })
 export class OrderAddComponent implements OnInit {
   public formAddNewOrder: FormGroup;
-  public order;
   public employee: any;
   public customer: any;
   public service;
@@ -26,9 +22,6 @@ export class OrderAddComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private orderService: OrderService,
-    private employeeService: EmployeeService,
-    private customerService: CustomerService,
-    private serviceService: ServiceService,
     public dialog: MatDialog,
     private router: Router
   ) {
@@ -41,8 +34,8 @@ export class OrderAddComponent implements OnInit {
       service: ['', [Validators.required]],
       dateStart: ['', [Validators.required]],
       dateEnd: ['', [Validators.required]],
-      deposits: ['', [Validators.required]],
-      total: ['', [Validators.required]]
+      deposits: ['', [Validators.required, Validators.pattern('^\\d+$')]],
+      total: ['', [Validators.required, Validators.pattern('^^\\d+$')]]
     });
   }
 
@@ -58,8 +51,7 @@ export class OrderAddComponent implements OnInit {
         this.employee = result;
         this.formAddNewOrder.controls.employee.errors.required = false;
       }
-      this.formAddNewOrder.value.employee = this.employee;
-      console.log(this.employee);
+      this.formAddNewOrder.controls.employee.setValue(this.employee);
     });
   }
 
@@ -75,7 +67,7 @@ export class OrderAddComponent implements OnInit {
         this.customer = result;
         this.formAddNewOrder.controls.customer.errors.required = false;
       }
-      this.formAddNewOrder.value.customer = this.customer;
+      this.formAddNewOrder.controls.customer.setValue(this.customer);
     });
   }
 
@@ -91,8 +83,13 @@ export class OrderAddComponent implements OnInit {
         this.service = result;
         this.formAddNewOrder.controls.service.errors.required = false;
       }
-      this.formAddNewOrder.value.service = this.service;
-      console.log(this.service);
+      this.formAddNewOrder.controls.service.setValue(this.service);
+    });
+  }
+
+  addOrder() {
+    this.orderService.addNewOrder(this.formAddNewOrder.value).subscribe(data => {
+      this.router.navigateByUrl('order-list');
     });
   }
 }

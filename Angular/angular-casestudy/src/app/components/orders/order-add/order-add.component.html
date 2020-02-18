@@ -10,12 +10,68 @@
     <label style="margin-right: 10px ">Khách hàng: </label>
     <span *ngIf="customer" style="margin-right: 10px"><i style="color: #1879ff">{{customer.fullName}}</i></span>
     <button mat-raised-button (click)="openCustomerDialog()">Chọn</button>
-    <span  class="text-danger ml-3" *ngIf="!customer">Vui chọn khách hàng </span>
+    <span class="text-danger ml-3" *ngIf="!customer">Vui chọn khách hàng </span>
   </div>
   <div class="form-group">
     <label style="margin-right: 10px ">Dịch vụ: </label>
-    <span *ngIf="service" style="margin-right: 10px"><i style="color: #1879ff">{{service.name+ ' ' +service.id}}</i></span>
+    <span *ngIf="service" style="margin-right: 10px"><i
+      style="color: #1879ff">{{service.name + ' ' + service.id}}</i></span>
     <button mat-raised-button (click)="openServiceDialog()">Chọn</button>
     <span class="text-danger ml-3" *ngIf="!service">Vui chọn dịch vụ </span>
   </div>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field>
+          <input [min]="minDate" matInput [matDatepicker]="myDatepicker" class="form-control"
+                 formControlName="dateStart" placeholder="Ngày làm hợp đồng">
+          <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+          <mat-datepicker #myDatepicker></mat-datepicker>
+          <mat-error
+            *ngIf="formAddNewOrder.controls.dateStart.errors?.required && formAddNewOrder.controls.dateStart.touched"
+            class="text-danger">Vui lòng chọn một ngày
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field>
+          <input [min]="minDate" matInput [matDatepicker]="myDatepicker1" class="form-control" formControlName="dateEnd"
+                 placeholder="Ngày kết thúc hợp đồng">
+          <mat-datepicker-toggle matSuffix [for]="myDatepicker1"></mat-datepicker-toggle>
+          <mat-datepicker #myDatepicker1></mat-datepicker>
+          <mat-error
+            *ngIf="formAddNewOrder.controls.dateEnd.errors?.required && formAddNewOrder.controls.dateEnd.touched"
+            class="text-danger">Vui lòng chọn một ngày
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>Tiền đặt cọc</mat-label>
+      <input matInput type="text" formControlName="deposits">
+      <mat-error
+        *ngIf="
+        (formAddNewOrder.controls.deposits.errors?.required
+        && formAddNewOrder.controls.deposits.touched)
+        || formAddNewOrder.controls.deposits.errors?.pattern"
+        class="text-danger">Vui lòng nhập vào số dương
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>Tổng cộng</mat-label>
+      <input matInput type="text" formControlName="total">
+      <mat-error
+        *ngIf="
+        (formAddNewOrder.controls.total.errors?.required
+        && formAddNewOrder.controls.total.touched)
+        || formAddNewOrder.controls.total.errors?.pattern"
+        class="text-danger">Vui lòng nhập vào số dương
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <button [disabled]="formAddNewOrder.invalid" mat-raised-button color="primary" (click)="addOrder()">Thêm mới</button>
 </form>

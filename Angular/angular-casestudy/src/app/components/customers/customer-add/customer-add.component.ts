@@ -33,6 +33,5 @@ export class CustomerAddComponent implements OnInit {
     this.customerService.addNewCustomer(this.formAddNewCustomer.value).subscribe(data => {
           this.router.navigateByUrl('customer-list');
         });
-    console.log(this.formAddNewCustomer.value);
   }
 }
