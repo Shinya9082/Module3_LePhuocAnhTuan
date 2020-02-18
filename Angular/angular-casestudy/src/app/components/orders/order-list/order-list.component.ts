@@ -1,16 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {OrderService} from '../../../services/order.service';
 
-export interface Order {
-  employee;
-  customer;
-  service;
-  dateStart;
-  dateEnd;
-  deposits;
-  total;
-  id;
-}
 
 @Component({
   selector: 'app-order-list',
