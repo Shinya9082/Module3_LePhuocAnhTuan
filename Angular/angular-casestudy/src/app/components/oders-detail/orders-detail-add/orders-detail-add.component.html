@@ -1,1 +1,34 @@
-<p>orders-detail-add works!</p>
+<h3 class="text-center">Thêm mới hợp đồng chi tiết</h3>
+<form class="w-75 mx-auto mt-3" [formGroup]="formAddNewOrder">
+  <div class="form-group">
+    <label style="margin-right: 10px ">Nhân viên: </label>
+    <span *ngIf="order" style="margin-right: 10px"><i style="color: #1879ff">{{order.id | changeIdPipe:'HĐ'}}</i></span>
+    <button mat-raised-button (click)="openOrderDialog()">Chọn</button>
+    <span class="text-danger ml-3" *ngIf="!order">Vui chọn hợp đồng </span>
+  </div>
+  <div class="form-group" >
+    <mat-form-field appearance="legacy">
+      <mat-label>Dịch vụ đi kèm</mat-label>
+      <mat-select formControlName="attachService">
+        <mat-option *ngFor="let type of ordersDetailList" [value]="type">{{type.name}}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="formAddNewOrder.controls.attachService.errors?.required && formAddNewOrder.controls.attachService.touched">Phải chọn một mục</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>Số lượng</mat-label>
+      <input matInput type="text" formControlName="amount">
+      <mat-error
+        *ngIf="
+        (formAddNewOrder.controls.amount.errors?.required
+        && formAddNewOrder.controls.amount.touched)
+        || formAddNewOrder.controls.amount.errors?.pattern"
+        class="text-danger">Vui lòng nhập vào số dương
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <button [disabled]="formAddNewOrder.invalid" mat-raised-button color="primary" (click)="addOrder()">Thêm mới</button>
+  </div>
+</form>
