@@ -28,7 +28,7 @@ const ordersDetailList: OrdersDetail[] = [
   styleUrls: ['./orders-detail-add.component.scss']
 })
 export class OrdersDetailAddComponent implements OnInit {
-  public formAddNewOrder: FormGroup;
+  public formAddNewOrderDetail: FormGroup;
   public order;
   ordersDetailList = ordersDetailList;
   constructor(
@@ -40,7 +40,7 @@ export class OrdersDetailAddComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.formAddNewOrder = this.formBuilder.group({
+    this.formAddNewOrderDetail = this.formBuilder.group({
       order: ['', [Validators.required]],
       attachService: ['', [Validators.required]],
       amount: ['', [Validators.required, Validators.pattern('^\\d+$')]],
@@ -57,13 +57,13 @@ export class OrdersDetailAddComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.order = result;
-        this.formAddNewOrder.controls.order.setValue(this.order);
+        this.formAddNewOrderDetail.controls.order.setValue(this.order);
       }
     });
   }
 
   addOrder() {
-    this.orderDetailService.addNewOrderDetail(this.formAddNewOrder.value).subscribe(data => {
+    this.orderDetailService.addNewOrderDetail(this.formAddNewOrderDetail.value).subscribe(data => {
       this.router.navigateByUrl('order-detail-list');
     });
   }
