@@ -49,9 +49,8 @@ export class OrderAddComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.employee = result;
-        this.formAddNewOrder.controls.employee.errors.required = false;
+        this.formAddNewOrder.controls.employee.setValue(this.employee);
       }
-      this.formAddNewOrder.controls.employee.setValue(this.employee);
     });
   }
 
@@ -65,9 +64,8 @@ export class OrderAddComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.customer = result;
-        this.formAddNewOrder.controls.customer.errors.required = false;
+        this.formAddNewOrder.controls.customer.setValue(this.customer);
       }
-      this.formAddNewOrder.controls.customer.setValue(this.customer);
     });
   }
 
@@ -81,9 +79,8 @@ export class OrderAddComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.service = result;
-        this.formAddNewOrder.controls.service.errors.required = false;
+        this.formAddNewOrder.controls.service.setValue(this.service);
       }
-      this.formAddNewOrder.controls.service.setValue(this.service);
     });
   }
 
