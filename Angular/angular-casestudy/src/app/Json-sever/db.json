@@ -277,5 +277,13 @@
       "total": "600",
       "id": 3
     }
+  ],
+  "orders-detail": [
+    {
+      "order": "",
+      "attachService": "",
+      "amount": "",
+      "id": 1
+    }
   ]
 }
