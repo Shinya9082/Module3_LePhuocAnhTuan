@@ -1,0 +1,21 @@
+<div>
+  <h2>Xóa sách</h2>
+  <p>
+    <label>Tên sách: </label>
+    <span>{{book.title}}</span>
+  </p>
+  <p>
+    <label>Tác giả: </label>
+    <span> {{book.author}}</span>
+  </p>
+  <p>
+    <label> Mô tả: </label>
+    <br>
+    <span> {{book.description}}</span>
+  </p>
+  <div class="row d-flex">
+    <button mat-raised-button class="mr-3" (click)="deleteBook()" color="warn">Xóa</button>
+    <button mat-raised-button color="accent" [routerLink]="['/book-list']">Thoát</button>
+  </div>
+</div>
+

@@ -1,0 +1,22 @@
+
+<div class="w-75 mx-auto mt-3" [formGroup]="formEditBook">
+  <h3>Cập nhật sách</h3>
+  <div class="form-group d-flex">
+    <label>Tên:</label>
+    <input class="form-control" type="text" formControlName="title">
+  </div>
+  <div class="form-group d-flex">
+    <label>Tác giả:</label>
+    <input class="form-control" type="text" formControlName="author">
+  </div>
+  <div class="form-group d-flex">
+    <label>Mô tả:</label>
+    <textarea class="form-control" type="text" formControlName="description">
+    </textarea>
+  </div>
+  <div class="row justify-content-end">
+    <button mat-raised-button class="mr-3" (click)="editBook()" color="primary">Cập nhật</button>
+    <button mat-raised-button color="warn" [routerLink]="['/book-list']">Thoát</button>
+  </div>
+</div>
+
