@@ -1,7 +1,8 @@
 import {Directive, EventEmitter, HostListener, Output} from '@angular/core';
 
 @Directive({
-  selector: '[appDropzone]'
+  // tslint:disable-next-line:directive-selector
+  selector: '[Dropzone]'
 })
 export class DropzoneDirective {
 
